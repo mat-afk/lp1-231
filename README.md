@@ -15,5 +15,5 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
     - Introdução à linguagem Java
 - Semana 04
     - Estruturas de controle
-    - Desvios condicionais
-    - Laços de repetição
+        - Desvios condicionais
+        - Laços de repetição
