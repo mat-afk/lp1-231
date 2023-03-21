@@ -21,7 +21,7 @@ public class Ex01 {
         double potencia = volume * 0.05 * (tempDesejada - tempAmbiente);
 
         System.out.printf("\nO volume do aquário é de %.1fL", volume);
-        System.out.printf("\nA potência do termostato necessária é de %.1f°C", potencia);
+        System.out.printf("\nA potência do termostato necessária é de %.1fW", potencia);
         System.out.printf("\nA quantidade de filtragem deve ser, no mínimo, %.1fL a %.1fL por hora\n", volume*2, volume*3);
 
         scan.close();
