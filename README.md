@@ -17,3 +17,6 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
     - Estruturas de controle
         - Desvios condicionais
         - Laços de repetição
+- Semana 05
+    - Exercícios
+    
