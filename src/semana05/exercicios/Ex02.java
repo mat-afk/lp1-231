@@ -12,7 +12,6 @@ public class Ex02 {
 
         System.out.println("Entre com a sua altura, em metros: ");
         double altura = scan.nextDouble();
-        altura = altura / 100;
 
         double imc = peso / (altura * altura);
 
