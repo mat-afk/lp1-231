@@ -19,4 +19,7 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
         - Laços de repetição
 - Semana 05
     - Exercícios
+- Semana 06
+    - Métodos
+    - Teste Unitário
     

@@ -97,6 +97,5 @@ public class EstruturasControle {
         for (double nota : notas) {
             System.out.println(nota);
         }
-
     }
 }
