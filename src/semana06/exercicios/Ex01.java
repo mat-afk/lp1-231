@@ -30,7 +30,7 @@ public class Ex01 {
     }
 
     public static double calcularPotencia(double volume, double temperaturaDesejada, double temperaturaAmbiente) {
-        return volume * 0.05 * (temperaturaDesejada - temperaturaAmbiente);
+        return volume * 0.05 * Math.abs(temperaturaDesejada - temperaturaAmbiente);
     }
 
     public static double [] calcularFiltragem(double volume) {
