@@ -22,4 +22,6 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
 - Semana 06
     - Métodos
     - Teste Unitário
+- Semana 07
+    - Exercícios de revisão
     
