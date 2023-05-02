@@ -24,4 +24,10 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
     - Teste Unitário
 - Semana 07
     - Exercícios de revisão
+- Semana 08
+    - Avaliação 1º Bimestre
+- Semana 09
+    - Correção Avaliação 1º Bimestre
+- Semana 10
+    - Introdução a Programação Orientada a Objeto (POO)
     
