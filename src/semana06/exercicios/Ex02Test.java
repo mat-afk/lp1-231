@@ -8,6 +8,7 @@ import org.junit.Test;
 public class Ex02Test {
     
     @Test
+    
     public void calculaIMCPesoEAlturaPositivos() {
         double peso = 69.0;
         double altura = 1.80;
