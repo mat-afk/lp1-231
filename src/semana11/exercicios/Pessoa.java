@@ -9,7 +9,7 @@ public class Pessoa {
         if(altura == 0) 
             throw new RuntimeException("Denominador não pode ser 0!");
         
-        return peso / (altura * altura);
+        return peso / ((altura / 100.0) * (altura / 100.0));
     }
 
     public String getFaixa() {
@@ -34,12 +34,12 @@ public class Pessoa {
     }
 
     public String getSituacao() {
-        double pesoAPerder = peso - (24.9 * altura * altura);
+        double pesoAPerder = peso - (24.9 * (altura / 100.0) * (altura / 100.0));
 
         if(pesoAPerder < 0) {
             return "GANHAR";
 
-        } else  if(pesoAPerder > 0) {
+        } else  if(pesoAPerder > 1) {
             return "PERDER";
 
         } else {

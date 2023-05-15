@@ -20,6 +20,19 @@ public class AquarioTest {
     }
 
     @Test
+    public void testaCalcularVolumeComDimensaoZero() {
+
+        Aquario aquario = new Aquario();
+        aquario.comprimento = 30.0;
+        aquario.altura = 40.0;
+        aquario.largura = 0.0;
+
+        double volume = aquario.calcularVolume();
+
+        assertEquals(0.0, volume);
+    }
+
+    @Test
     public void testaCalcularPotenciaDoTermostato() {
 
         Aquario aquario = new Aquario();
@@ -34,6 +47,21 @@ public class AquarioTest {
         assertEquals(39.0, potencia);
     }
 
+    @Test
+    public void testaCalcularPotenciaDoTermostatoComDimensaoZero() {
+
+        Aquario aquario = new Aquario();
+        aquario.comprimento = 30.0;
+        aquario.altura = 40.0;
+        aquario.largura = 0.0;
+        double temperaturaDesejada = 30;
+        double temperaturaAmbiente = 17;
+
+        double potencia = aquario.calcularPotenciaDoTermostato(temperaturaDesejada, temperaturaAmbiente);
+
+        assertEquals(0.0, potencia);
+    }
+
     @Test 
     public void testaCalcularQuantidadeLitrosFiltro() {
 
@@ -42,6 +70,20 @@ public class AquarioTest {
         aquario.altura = 40.0;
         aquario.largura = 50.0;
         double [] esperado = {120.0, 180.0};
+
+        double [] filtragem = aquario.calcularQuantidadeLitrosFiltro();
+
+        assertArrayEquals(esperado, filtragem);
+    }
+
+    @Test 
+    public void testaCalcularQuantidadeLitrosFiltroComDimensaoZero() {
+
+        Aquario aquario = new Aquario();
+        aquario.comprimento = 30.0;
+        aquario.altura = 40.0;
+        aquario.largura = 0.0;
+        double [] esperado = {0.0, 0.0};
 
         double [] filtragem = aquario.calcularQuantidadeLitrosFiltro();
 
