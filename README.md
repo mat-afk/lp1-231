@@ -30,4 +30,8 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
     - Correção Avaliação 1º Bimestre
 - Semana 10
     - Introdução a Programação Orientada a Objeto (POO)
+- Semana 11
+    - Exercícios de Orientação a Objeto (OO)
+-Semana 12
+    - 
     
