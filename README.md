@@ -32,6 +32,6 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
     - Introdução a Programação Orientada a Objeto (POO)
 - Semana 11
     - Exercícios de Orientação a Objeto (OO)
--Semana 12
-    - 
+- Semana 12
+    - Métodos Construtores e exercícios 
     
