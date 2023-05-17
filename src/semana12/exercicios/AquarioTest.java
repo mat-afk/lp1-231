@@ -1,13 +1,14 @@
 package semana12.exercicios;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import org.junit.Test;
 
 public class AquarioTest {
 
     @Test
-    public void testaInstanciaAquarioTresValores() {
+    public void testaInstanciarAquarioTresValores() {
 
         Aquario aquario = new Aquario(30.0, 40.0, 50.0);
 
@@ -16,18 +17,32 @@ public class AquarioTest {
         assertEquals(50.0, aquario.largura);
     }
 
-        @Test
-    public void testaInstanciaAquarioTresValoresComZero() {
+    @Test
+    public void testaInstanciarAquarioComComprimentoZero() {
 
-        Aquario aquario = new Aquario(30.0, 40.0, 0.0);
-
-        assertEquals(30.0, aquario.comprimento);
-        assertEquals(40.0, aquario.altura);
-        assertEquals(0.0, aquario.largura);
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Aquario(0.0, 40.0, 5.0);
+        });
     }
 
     @Test
-    public void testaInstanciaAquarioUmValor() {
+    public void testaInstanciarAquarioComAlturaZero() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Aquario(30.0, 0.0, 5.0);
+        });
+    }
+
+    @Test
+    public void testaInstanciarAquarioComLarguraZero() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Aquario(30.0, 40.0, 0.0);
+        });
+    }
+
+    @Test
+    public void testaInstanciarAquarioComUmValor() {
 
         Aquario aquario = new Aquario(30.0);
 
@@ -37,13 +52,11 @@ public class AquarioTest {
     }
 
     @Test
-    public void testaInstanciaAquarioUmValorComZero() {
+    public void testaInstanciarAquarioComUmValorIgualAZero() {
 
-        Aquario aquario = new Aquario(0.0);
-
-        assertEquals(0.0, aquario.comprimento);
-        assertEquals(0.0, aquario.altura);
-        assertEquals(0.0, aquario.largura);
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Aquario(0.0);
+        });
     }
    
     @Test
@@ -54,16 +67,6 @@ public class AquarioTest {
         double volume = aquario.calcularVolume();
 
         assertEquals(60.0, volume);
-    }
-
-    @Test
-    public void testaCalcularVolumeComDimensaoZero() {
-
-        Aquario aquario = new Aquario(30.0, 40.0, 0.0);
-
-        double volume = aquario.calcularVolume();
-
-        assertEquals(0.0, volume);
     }
 
     @Test
@@ -78,34 +81,11 @@ public class AquarioTest {
         assertEquals(39.0, potencia);
     }
 
-    @Test
-    public void testaCalcularPotenciaDoTermostatoComDimensaoZero() {
-
-        Aquario aquario = new Aquario(30.0, 40.0, 0.0);
-        double temperaturaDesejada = 30;
-        double temperaturaAmbiente = 17;
-
-        double potencia = aquario.calcularPotenciaDoTermostato(temperaturaDesejada, temperaturaAmbiente);
-
-        assertEquals(0.0, potencia);
-    }
-
     @Test 
     public void testaCalcularQuantidadeLitrosFiltro() {
 
         Aquario aquario = new Aquario(30.0, 40.0, 50.0);
         double [] esperado = {120.0, 180.0};
-
-        double [] filtragem = aquario.calcularQuantidadeLitrosFiltro();
-
-        assertArrayEquals(esperado, filtragem);
-    }
-
-    @Test 
-    public void testaCalcularQuantidadeLitrosFiltroComDimensaoZero() {
-
-        Aquario aquario = new Aquario(30.0, 40.0, 0.0);
-        double [] esperado = {0.0, 0.0};
 
         double [] filtragem = aquario.calcularQuantidadeLitrosFiltro();
 

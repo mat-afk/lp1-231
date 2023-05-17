@@ -5,10 +5,18 @@ public class Pessoa {
     public int altura;
     public double peso;
 
-    public double calcularIMC() {
-        if(altura == 0) 
-            throw new RuntimeException("Denominador não pode ser 0!");
+    public Pessoa(int altura, double peso) {
+        if(altura <= 0) 
+            throw new IllegalArgumentException("Altura inválida");
+
+        if(peso <= 0.0) 
+            throw new IllegalArgumentException("Altura inválida");
         
+        this.altura = altura;
+        this.peso = peso;
+    }
+
+    public double calcularIMC() {
         return peso / ((altura / 100.0) * (altura / 100.0));
     }
 

@@ -8,6 +8,15 @@ public class Aquario {
 
     public Aquario(double comprimento, double altura, double largura) {
 
+        if(comprimento <= 0.0)
+            throw new IllegalArgumentException("Comprimento inválido");
+
+        if(altura <= 0.0)
+            throw new IllegalArgumentException("Altura inválida");
+
+        if(largura <= 0.0)
+            throw new IllegalArgumentException("Largura inválida");
+
         this.comprimento = comprimento;
         this.altura = altura;
         this.largura = largura;
