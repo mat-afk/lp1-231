@@ -33,5 +33,6 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
 - Semana 11
     - Exercícios de Orientação a Objeto (OO)
 - Semana 12
-    - Introdução a e exercícios de métodos construtores 
+    - Introdução a métodos construtores 
+    - Exercícios e testes unitários
     
