@@ -35,4 +35,6 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
 - Semana 12
     - Introdução a métodos construtores 
     - Exercícios e testes unitários
+- Semana 14
+    - Modificadores de acesso, getters e setters
     
