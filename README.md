@@ -36,5 +36,6 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
     - Introdução a métodos construtores 
     - Exercícios e testes unitários
 - Semana 14
-    - Modificadores de acesso, getters e setters
+    - Encapsulamento e modificadores de acesso
+    - Métodos getters e setters
     
