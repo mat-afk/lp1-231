@@ -38,4 +38,5 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
 - Semana 14
     - Encapsulamento e modificadores de acesso
     - Métodos getters e setters
-    
+- Semana 17
+    - Herança
