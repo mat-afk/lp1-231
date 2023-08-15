@@ -40,3 +40,6 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
     - Métodos getters e setters
 - Semana 17
     - Herança
+- Semana 19
+    - Classe abstrata
+    - Polimorfismo
