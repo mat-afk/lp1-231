@@ -4,8 +4,8 @@ import java.util.List;
 
 public class MultiplaEscolha extends Questao {
 
-    public MultiplaEscolha(int numero, String enunciado, List<Alternativa> alternativas) {
-        super(numero, enunciado, alternativas);
+    public MultiplaEscolha(int numero, String enunciado, List<Alternativa> respostas) {
+        super(numero, enunciado, respostas);
     }
 
     @Override

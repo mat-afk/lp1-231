@@ -6,13 +6,25 @@ public class Alternativa {
     public boolean marcada;
     private boolean correta;
 
-    public Alternativa(String descricao, boolean correta) {
+    public Alternativa(String descricao) {
         this.descricao = descricao;
         this.marcada = false;
-        this.correta = correta;
+        this.correta = false;
+    }
+
+    public void marcarAlternativa() {
+        marcada = true;
+    }
+
+    public void setResposta() {
+        correta = true;
     }
 
     public boolean acertada() {
-        return false;
+        return marcada && correta == true;
+    }
+
+    public String getDescricao() {
+        return descricao;
     }
 }

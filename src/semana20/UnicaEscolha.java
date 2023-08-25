@@ -1,11 +1,9 @@
 package semana20;
 
-import java.util.List;
-
 public class UnicaEscolha extends Questao {
 
-    public UnicaEscolha(int numero, String enunciado, List<Alternativa> alternativas) {
-        super(numero, enunciado, alternativas);
+    public UnicaEscolha(int numero, String enunciado, Alternativa resposta) {
+        super(numero, enunciado, resposta);
     }
 
     @Override

@@ -1,12 +1,11 @@
 package semana20;
 
-import java.util.List;
 
-public class VerdadeiroOuFalso extends Questao {
+public class VerdadeiroOuFalso extends UnicaEscolha {
 
-    public VerdadeiroOuFalso(int numero, String enunciado, List<Alternativa> alternativas) {
-        super(numero, enunciado, alternativas);
-    }
+    public VerdadeiroOuFalso(int numero, String enunciado, boolean resposta) {
+        super(numero, enunciado, null);
+    } 
 
     @Override
     public void addAlternativa(Alternativa alternativa) {
