@@ -9,14 +9,22 @@ public class Alternativa {
     public Alternativa(String descricao) {
         this.descricao = descricao;
         this.marcada = false;
-        this.correta = false;
+    }
+
+    public Alternativa(String descricao, boolean correta) {
+        this(descricao);
+        this.correta = correta;
     }
 
     public void marcarAlternativa() {
         marcada = true;
     }
 
-    public void setResposta() {
+    public boolean getCorreta() {
+        return correta;
+    }
+
+    public void setCorreta() {
         correta = true;
     }
 
