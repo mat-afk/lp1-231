@@ -43,8 +43,9 @@ public class Main {
         ip.addAlternativa(new Alternativa("192.168.1.208", false));
 
         System.out.println("Prepare-se para o teste!\n  Obs: Se houver mais de uma resposta, separe por vírgula");
-        Scanner sc = new Scanner(System.in);
-        sc.nextLine();
+        try (Scanner sc = new Scanner(System.in)) {
+            sc.nextLine();
+        }
         prova.aplicar();
     }
 }
