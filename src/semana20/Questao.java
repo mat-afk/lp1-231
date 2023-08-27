@@ -13,6 +13,17 @@ public abstract class Questao implements Comparable<Questao> {
         this.numero = numero;
         this.enunciado = enunciado;
         this.alternativas = new ArrayList<>(alternativas);
+
+        int cont = 0;
+        for(Alternativa alternativa : alternativas) {    
+            if(alternativa.getCorreta()) {
+                cont++;
+            }
+        }
+
+        if(cont <= 0) {
+            throw new RuntimeException("Não é possível haver mais de uma alternativa correta");
+        }
     }
 
     public void addAlternativa(Alternativa alternativa) {

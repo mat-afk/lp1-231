@@ -10,10 +10,16 @@ public class UnicaEscolha extends Questao {
     public UnicaEscolha(int numero, String enunciado, List<Alternativa> alternativas) {
         super(numero, enunciado, alternativas);
 
+        int cont = 0;
         for(Alternativa alternativa : alternativas) {    
             if(alternativa.getCorreta() == true) {
                 resposta = alternativa;
+                cont++;
             }
+        }
+
+        if(cont > 1) {
+            throw new RuntimeException("Não é possível haver mais de uma alternativa correta");
         }
     }
 
