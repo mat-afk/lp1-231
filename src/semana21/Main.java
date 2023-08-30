@@ -1,7 +1,6 @@
 package semana21;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 // interface = contrato
 // conjunto de métodos (somente assinatura, sem corpo)
