@@ -4,19 +4,24 @@ import java.util.List;
 
 public class VerdadeiroOuFalso extends Questao {
 
-    public final char IDENTIFICADOR = '*';
-    public boolean resposta;
-
     public VerdadeiroOuFalso(int numero, String enunciado, boolean resposta) {
         super(numero, enunciado, List.of(
             new Alternativa("Verdadeiro", resposta),
             new Alternativa("Falso", !resposta)
         ));
-
-        this.resposta = resposta;
     } 
 
-    public void addAlternativa(Alternativa alternativa) { }
+    public VerdadeiroOuFalso(int numero, String enunciado) {
+        super(numero, enunciado);
+    }
+
+    public void addAlternativa(Alternativa alternativa) {
+        throw new IllegalArgumentException("Você não pode adicionar alternativas em questões de verdadeiro ou falso.");
+    }
+
+    public void addAlternativas(Alternativa[] alternativa) {
+        throw new IllegalArgumentException("Você não pode adicionar alternativas em questões de verdadeiro ou falso.");
+    }
 
     @Override
     public boolean verificarResposta() {
@@ -29,13 +34,22 @@ public class VerdadeiroOuFalso extends Questao {
     }
 
     @Override
-    public void responderQuestao(String res) {
-
-        alternativas.forEach(alternativa -> { 
-            if(res.equals(alternativa.getDescricao())) {
-                alternativa.marcarAlternativa();
+    public void marcarAlternativa(String resposta) {
+        for (Alternativa alternativa : alternativas) {
+            if (resposta.equals(alternativa.getDescricao())) {
+                alternativa.marcar();
             } 
-        });
+        }
+    }   
+
+    @Override
+    public void marcarAlternativa(Alternativa resposta) {
+        throw new IllegalArgumentException("Você não pode marcar alternativas em questões de verdadeiro ou falso.");
+    }
+
+    @Override
+    public void marcarAlternativa(Alternativa[] respostas) {
+        throw new IllegalArgumentException("Você não pode marcar múltiplas alternativas em questões de verdadeiro ou falso.");
     }
 
     @Override

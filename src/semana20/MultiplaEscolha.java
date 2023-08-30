@@ -5,8 +5,7 @@ import java.util.List;
 
 public class MultiplaEscolha extends Questao {
 
-    public final char IDENTIFICADOR = '#';
-    public List<Alternativa> respostas;
+    private List<Alternativa> respostas;
 
     public MultiplaEscolha(int numero, String enunciado, List<Alternativa> alternativas) {
         super(numero, enunciado, alternativas);
@@ -17,6 +16,11 @@ public class MultiplaEscolha extends Questao {
                 respostas.add(alternativa);
             }
         }
+    }
+
+    public MultiplaEscolha(int numero, String enunciado) {
+        super(numero, enunciado);
+        this.respostas = new ArrayList<>();
     }
 
     @Override
@@ -34,16 +38,37 @@ public class MultiplaEscolha extends Questao {
         }
         return false;
     }
-    
+
+
     @Override
-    public void responderQuestao(String res) {
-        alternativas.forEach(alternativa -> {
-            for(String escolha : res.split(", ")) {
-                if(escolha.equals(alternativa.getDescricao())) {
-                    alternativa.marcarAlternativa();
-                }
+    public void marcarAlternativa(String respostas) {
+        for (String resposta : respostas.split(", ")) {
+            for (Alternativa alternativa : alternativas) {
+                if (resposta.equals(alternativa.getDescricao())) {
+                    alternativa.marcar();
+                } 
             }
-        });
+        }
+    }   
+
+    @Override
+    public void marcarAlternativa(Alternativa resposta) {
+        for (Alternativa alternativa : alternativas) {
+            if(resposta.equals(alternativa)) {
+                alternativa.marcar();
+            } 
+        }
+    }
+
+    @Override
+    public void marcarAlternativa(Alternativa[] respostas) {
+        for (Alternativa resposta : respostas) {
+            for (Alternativa alternativa : alternativas) {
+                if(alternativa.equals(resposta)) {
+                    alternativa.marcar();
+                } 
+            }
+        }
     }
 
     @Override

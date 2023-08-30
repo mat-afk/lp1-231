@@ -1,51 +1,49 @@
 package semana20;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     
     public static void main(String[] args) {
-        Prova prova = new Prova(List.of(
 
-            new UnicaEscolha(1, "Qual é a capital da frança?", 
-                List.of(
-                    new Alternativa("Berlim", false),
-                    new Alternativa("Paris", true),
-                    new Alternativa("Washington", false),
-                    new Alternativa("Jakarta", false)
-                )
-            ),
+        Questao q1 = new UnicaEscolha(1, "Qual é a capital da França?");
+        Alternativa a = new Alternativa("Berlim", false);
+        Alternativa b = new Alternativa("Paris", true);
+        Alternativa c = new Alternativa("Lyon", false);
+        Alternativa d = new Alternativa("Jakarta", false);
+        q1.addAlternativas(new Alternativa[] {a, b, c, d});
+        Alternativa e = new Alternativa("Bruxelas", false);
+        q1.addAlternativa(e);
 
-            new VerdadeiroOuFalso(4, "HTML é uma linguagem de programação?", false),
+        Questao q4 = new VerdadeiroOuFalso(4, "HTML é uma linguagem de programação?", false);
 
-            new MultiplaEscolha(3, "Quais destes são acentos?", 
-                List.of(
-                    new Alternativa("Agudo", true),
-                    new Alternativa("Circunflexo", true),
-                    new Alternativa("Til", false),
-                    new Alternativa("Trema", false)
-                )
-            )
-        ));
-
-        UnicaEscolha ip = 
-        new UnicaEscolha(2, "192.168.1.0 /28, um IP válido para uso como host seria:", 
+        Questao q3 = new MultiplaEscolha(3, "Quais destes são acentos?", 
             List.of(
-                new Alternativa("192.1681.230", false),
-                new Alternativa("192.168.1.96", false),
-                new Alternativa("192.168.1.239", true)
+                new Alternativa("Agudo", true),
+                new Alternativa("Circunflexo", true),
+                new Alternativa("Til", false),
+                new Alternativa("Trema", false)
             )
         );
 
-        prova.addQuestao(ip);
+        Prova prova = new Prova(List.of(q1, q4, q3));
 
-        ip.addAlternativa(new Alternativa("192.168.1.208", false));
+        Questao q2 = new MultiplaEscolha(2, "192.168.1.0 /28, um IP válido para uso como host seria:");
 
-        System.out.println("Prepare-se para o teste!\n  Obs: Se houver mais de uma resposta, separe por vírgula");
-        try (Scanner sc = new Scanner(System.in)) {
-            sc.nextLine();
-        }
-        prova.aplicar();
+        Alternativa f = new Alternativa("192.1681.230", true);
+        Alternativa g = new Alternativa("192.1681.97", false);
+        Alternativa h = new Alternativa("192.1681.239", true);
+        q2.addAlternativas(new Alternativa[] {f, g, h});
+
+        prova.addQuestao(q2);
+
+        prova.responder(q1, b);
+        prova.responder(2, new Alternativa[] {f, g});
+        prova.responder(3, "Agudo, Circunflexo");
+        prova.responder(q4, "Falso");
+
+        prova.mostrarCorrecao();
+
+        System.out.println("Pontuação: " + prova.calcularPontuacao());
     }
 }

@@ -3,13 +3,11 @@ package semana20;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
 public class Prova {
 
     private List<Questao> questoes;
     private byte pontuacao;
-    private Scanner scan = new Scanner(System.in);
 
     public Prova(List<Questao> questoes) {
         this.questoes = new ArrayList<>(questoes);
@@ -20,33 +18,59 @@ public class Prova {
         questoes.add(questao);
     }
 
-    public void calcularPontuacao() {
+    public Questao getQuestaobyNumero(int numero) {
+        for (Questao questao : questoes) {
+            if(questao.getNumero() == numero) return questao;
+        }
+        return null;
+    }
+
+    public int calcularPontuacao() {
         for(Questao questao : questoes) {
             if(questao.verificarResposta() == true) {
                 pontuacao++;
             }
         }
-    }
-
-    public byte getPontuacao() {
         return pontuacao;
     }
 
-    public void aplicar() {
+    public void responder(Questao questao, String resposta) {
+        questao.marcarAlternativa(resposta);
+    }
 
+    public void responder(Questao questao, Alternativa resposta) {
+        questao.marcarAlternativa(resposta);
+    }
+
+    public void responder(Questao questao, Alternativa[] respostas) {
+        questao.marcarAlternativa(respostas);
+    }
+
+    public void responder(int numero, String resposta) {
+        getQuestaobyNumero(numero).marcarAlternativa(resposta);
+    }
+
+    public void responder(int numero, Alternativa resposta) {
+        getQuestaobyNumero(numero).marcarAlternativa(resposta);
+    }
+
+    public void responder(int numero, Alternativa[] respostas) {
+        getQuestaobyNumero(numero).marcarAlternativa(respostas);
+    }
+
+    public void mostrarCorrecao() {
+        
         Collections.sort(questoes);
 
         for(Questao questao : questoes) {
-            System.out.println(questao.getNumero() + ". " + questao.getEnunciado() + "\n");
-            questao.alternativas.forEach(alternativa -> System.out.println("+ " + alternativa.getDescricao()));
-            String res = scan.nextLine();
-            questao.responderQuestao(res.trim());
-            System.out.println("\n");
+            System.out.println(questao.getNumero() + ". " + questao.getEnunciado());
+
+            for (Alternativa alternativa : questao.alternativas) {
+                System.out.println("+ " + alternativa.getDescricao());
+            }
+
+            if(questao.verificarResposta()) System.out.println("Pontos: +1\n");
+            else System.out.println("Pontos: 0\n");
         }
-
-        calcularPontuacao();
-        System.out.println("Pontuação: " + getPontuacao());
-
-        scan.close();
     }
 }
