@@ -51,3 +51,5 @@ Repositório destinado aos conteúdos de Linguagem de Programação 1.
         - ArrayList e LinkedList
         - Set
         - Map
+- Semana 22
+    - integração com JDBC
